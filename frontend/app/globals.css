@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 10px;
+    height: -webkit-fill-available;
+    @apply bg-black-d text-white-l;
+  }
+
+  body {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+.btn {
+  @apply flex justify-center items-center gap-4 border px-8 py-2 hover:bg-white-d/70 cursor-pointer duration-200;
+}
+
+.disabled.btn {
+  @apply text-white-d border-white-d hover:bg-transparent cursor-not-allowed;
+}
+
+.card-description {
+  @apply text-sm text-white-n pl-4 border-l-white-l border-l max-h-48 text-ellipsis overflow-y-hidden relative select-none;
+}
+
+.card::after {
+  content: "";
+  @apply absolute bottom-[1rem] right-0 w-full h-[5rem] bg-gradient-to-b from-transparent to-black-d;
+}
